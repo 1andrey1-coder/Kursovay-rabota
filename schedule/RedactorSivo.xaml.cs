@@ -89,7 +89,8 @@ namespace schedule
                     item1.Groupid = SelectedGroup.GroupId;
                     db.TblScheduleDbs.Add(item1);
                     db.SaveChanges();
-                    tbl2 = DB.GetInstance().TblScheduleDbs.ToList();
+                    //tbl2 = DB.GetInstance().TblScheduleDbs.ToList();
+                    tbl2 = db.TblScheduleDbs.Where(s => s.Groupid == grud.GroupId).ToList();
                     item1 = new TblScheduleDb();
                     //OBN(sender, e);
                 }
