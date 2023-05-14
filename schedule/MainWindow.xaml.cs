@@ -29,10 +29,13 @@ namespace schedule
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public TblGroup SelectedGroup { get; set; }
-        public TblGroup SelectedGroup2 { get => selectedGroup2; set { selectedGroup2 = value;
+
+        public TblGroup SelectedGroup2 { get => selectedGroup2;
+            set { selectedGroup2 = value;
                 var db = new ScheduleDbContext();
                 TblScheduleDb = db.TblScheduleDbs.Where(s => s.Groupid == SelectedGroup2.GroupId).ToList();
             }  }
+
         public TblGroup grud { get; set; }
 
         public event PropertyChangedEventHandler? PropertyChanged;

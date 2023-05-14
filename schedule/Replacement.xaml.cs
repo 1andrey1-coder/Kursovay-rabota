@@ -72,8 +72,7 @@ namespace schedule
             }
         }
 
-        public TblReplacement replacement { get => replacement1; set { replacement1 = value; Fill(); } }
-        private TblReplacement replacement1 = new TblReplacement();
+       
 
 
         public Schedule schedule { get => selected; set { selected = value; Fill(); } }
@@ -87,10 +86,7 @@ namespace schedule
 
         private Schedule sel = new Schedule();
 
-        public List<TblReplacement> tbl_replacement { get => tbl_replacement1; set { tbl_replacement1 = value; Fill(); } }
-
-
-        private List<TblReplacement> tbl_replacement1;
+      
         private string search;
 
 
@@ -127,18 +123,25 @@ namespace schedule
 
         public List<TblWeekday> Day { get; set; }
 
-        public TblReplacement SelectedDay
+        public TblWeekday SelectedDay
         {
             get => SelectedDay1; set
             {
                 SelectedDay1 = value;
                 var db = new ScheduleDbContext();
-                tbl_replacement = db.TblReplacements.Where(s => s.Id == SelectedDay.Id).ToList();
+                tbl_replacement = db.TblReplacements.Where(s => s.WeekdaysId == SelectedDay.Id).ToList();
             }
         }
-        private TblReplacement SelectedDay1;
-        public List<TblReplacement> TblWeekday { get => TblWeekday1; set { TblWeekday1 = value; Fill(); } }
-        private List<TblReplacement> TblWeekday1;
+
+        public TblReplacement replacement { get => replacement1; set { replacement1 = value; Fill(); } }
+        private TblReplacement replacement1 = new TblReplacement();
+
+        public List<TblReplacement> tbl_replacement { get => tbl_replacement1; set { tbl_replacement1 = value; Fill(); } }
+        private List<TblReplacement> tbl_replacement1;
+
+        private TblWeekday SelectedDay1;
+        public List<TblReplacement> TblReplacement { get => TblReplacement1; set { TblReplacement1 = value; Fill(); } }
+        private List<TblReplacement> TblReplacement1;
         public Replacement()
         {
             InitializeComponent();
@@ -149,12 +152,15 @@ namespace schedule
 
 
 
-
+            //показывает данные дни недели
             Day = DB.GetInstance().TblWeekdays.ToList();
+
+            TblReplacement = DB.GetInstance().TblReplacements.ToList();
+            tbl_replacement = DB.GetInstance().TblReplacements.ToList();
 
             Combobox3.ItemsSource = Day;
 
-            tbl_replacement = DB.GetInstance().TblReplacements.ToList();
+           
             GipleCommand = new CustomCommand(
                () => { kreating = Visibility.Visible; });
         }
@@ -194,6 +200,7 @@ namespace schedule
                     db.TblReplacements.Add(replacement);
                     db.SaveChanges();
                     tbl_replacement = DB.GetInstance().TblReplacements.ToList();
+                    tbl_replacement = db.TblReplacements.Where(s => s.Id == SelectedDay.Id).ToList();
                     replacement = new TblReplacement();
 
                 }
