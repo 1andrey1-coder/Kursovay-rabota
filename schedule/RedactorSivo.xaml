@@ -11,7 +11,7 @@
         <Style TargetType="{x:Type Grid}">
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect ShadowDepth="5" Color="#A9A9A9" Opacity="0.7" BlurRadius="7" />
+                    <DropShadowEffect ShadowDepth="5" Color="#4d7fb8" Opacity="0.7" BlurRadius="7" />
                 </Setter.Value>
             </Setter>
         </Style>

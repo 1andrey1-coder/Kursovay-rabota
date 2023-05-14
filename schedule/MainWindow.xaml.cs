@@ -51,9 +51,18 @@ namespace schedule
         public List<TblGroup> Group2 { get; set; }
         public List<TblScheduleDb> TblScheduleDb { get => TblScheduleDb1; set { TblScheduleDb1 = value; Fill(); } }
         private List<TblScheduleDb> TblScheduleDb1;
-
-
-
+        //Combobox4
+        public TblWeekday SelectedDay2
+        {
+            get => SelectedDay1; set
+            {
+                SelectedDay1 = value;
+                var db = new ScheduleDbContext();
+                Replacement = db.TblReplacements.Where(s => s.WeekdaysId == SelectedDay2.Id).ToList();
+            }
+        }
+        private TblWeekday SelectedDay1;
+        public List<TblWeekday> Day { get; set; }
         public MainWindow()
         {
 
@@ -61,7 +70,7 @@ namespace schedule
             DataContext = this;
 
             Search();
-
+            Day = DB.GetInstance().TblWeekdays.ToList();
             Replacement = DB.GetInstance().TblReplacements.ToList();
             TblScheduleDb = DB.GetInstance().TblScheduleDbs.ToList();
             //listschedule2.ItemsSource = Replacement;
@@ -73,8 +82,8 @@ namespace schedule
             Group2 = DB.GetInstance().TblGroups.ToList();
             Combobox.ItemsSource = Group;
             Combobox2.ItemsSource = Group2;
+            Combobox4.ItemsSource = Day;
 
-          
 
             grud = new TblGroup();
             grud = SelectedGroup;

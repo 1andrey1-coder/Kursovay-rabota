@@ -12,7 +12,7 @@
         <Style TargetType="{x:Type Grid}">
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect ShadowDepth="5" Color="#A9A9A9" Opacity="0.7" BlurRadius="7" />
+                    <DropShadowEffect ShadowDepth="5" Color="#4d7fb8" Opacity="0.7" BlurRadius="7" />
                 </Setter.Value>
             </Setter>
 
@@ -20,7 +20,7 @@
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect ShadowDepth="5" Color="#A9A9A9" Opacity="0.7" BlurRadius="7" />
+                    <DropShadowEffect ShadowDepth="5" Color="#4d7fb8" Opacity="0.1" BlurRadius="7" />
                 </Setter.Value>
             </Setter>
 
@@ -40,15 +40,15 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="29"/>
-            <RowDefinition Height="38*" />
-            <RowDefinition Height="208*" />
-            <RowDefinition Height="309*" />
+            <RowDefinition Height="38" />
+            <RowDefinition Height="208" />
+            <RowDefinition Height="309" />
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="284" />
-            <ColumnDefinition Width="67*" />
-            <ColumnDefinition Width="92*" />
+            <ColumnDefinition Width="600" />
+            <ColumnDefinition  />
         </Grid.ColumnDefinitions>
         <StackPanel Height="25" VerticalAlignment="Center"
                     Grid.Column="0"  Grid.Row="1" Orientation="Horizontal" Margin="0,0,2,0">
@@ -93,6 +93,13 @@
                   Margin="0,0,0,0"   Content="Изменение в расписании" Click="replacement"  Width="170">
 
             </Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" 
+                   Grid.Column="1"  
+                    Grid.Row="3" >
+            <ComboBox Width="100" x:Name="Combobox4"
+                       DisplayMemberPath="Day" SelectedItem="{Binding SelectedDay2}" Margin="40,13,40,0"/>
+
         </StackPanel>
 
 

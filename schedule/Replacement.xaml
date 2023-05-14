@@ -10,7 +10,7 @@
         <Style TargetType="{x:Type Grid}">
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect ShadowDepth="5" Color="#A9A9A9" Opacity="0.7" BlurRadius="7" />
+                    <DropShadowEffect ShadowDepth="5" Color="#4d7fb8" Opacity="0.7" BlurRadius="7" />
                 </Setter.Value>
             </Setter>
 
@@ -84,11 +84,11 @@
 
 
             <Button  Background="#fccf03"  x:Name="Dobav"  HorizontalAlignment="Center"
-                     Content="Добавить"  Width="130" Height="24"
+                     Content="Добавить запись"  Width="130" Height="24"
                     Command="{Binding GipleCommand}"/>
 
             <Button  Background="#fccf03" x:Name="Del" HorizontalAlignment="Center"
-                    Content="Удалить"  Width="130" Height="23"
+                    Content="Удалить запись"  Width="130" Height="23"
                     Click="Delet" />
             <StackPanel VerticalAlignment="Top" DataContext="{Binding Selected}" Visibility="Visible">
                 <Label Background="White">
@@ -105,7 +105,7 @@
                 <TextBlock Text="Препод"/>
                 <TextBox  Text="{Binding Path=Name}"/>
                 <Button  Background="#fccf03"  x:Name="Repair"
-                         HorizontalAlignment="Center" Content="Сохранить"  Width="130" Height="25"
+                         HorizontalAlignment="Center" Content="Редактировать"  Width="130" Height="25"
                    Click="saved"/>
 
             </StackPanel>
@@ -113,7 +113,7 @@
             <StackPanel   Visibility="{Binding kreating}">
                 <StackPanel DataContext="{Binding replacement}">
                     <Label Background="White">
-                        <TextBlock Text="Добавление" />
+                        <TextBlock Text="Добавление записи" />
                     </Label>
                     <TextBlock Text="Группа"/>
                     <TextBox x:Name="group"  Text="{Binding Group}"/>
@@ -127,7 +127,7 @@
                     <TextBox x:Name="Name"  Text="{Binding Name}"/>
 
                     <Button   Background="#fccf03"
-                              HorizontalAlignment="Center" Content="Добавить"  Width="130" Height="25"
+                              HorizontalAlignment="Center" Content="Добавить запись"  Width="130" Height="25"
                    Click="Dob" x:Name="CustomMessageBox"/>
 
                 </StackPanel>
