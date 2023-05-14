@@ -198,6 +198,7 @@ namespace schedule
                     kreating = Visibility.Visible;
                     Fill(nameof(tReplacements));
 
+                    replacement.WeekdaysId = SelectedDay.Id;
                     db.TblReplacements.Add(replacement);
                     db.SaveChanges();
                     tbl_replacement = DB.GetInstance().TblReplacements.ToList();

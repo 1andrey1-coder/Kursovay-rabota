@@ -22,11 +22,11 @@
                 </Style>
             </Style.Resources>
         </Style>
-     
+
     </Window.Resources>
-    
-       
-        
+
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
@@ -41,9 +41,10 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Height="25" Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="1"
-                    Grid.Row="0" Width="250" HorizontalAlignment="Left">
+                    Grid.Row="0" Width="376" HorizontalAlignment="Left" Margin="0,8,0,8">
             <Button  Background="#fccf03" Content="Назад" Click="nasad" Width="121"/>
-            <ComboBox x:Name="Combobox3"  DisplayMemberPath="Day" 
+            <Label Content="Дни недели: "  Margin="20,0,5,-1"/>
+            <ComboBox x:Name="Combobox3"  DisplayMemberPath="Day"  Margin="0,0,0,0"
                       Width="118" RenderTransformOrigin="0.5,0.5"
                       ItemsSource="{Binding Selected3}" SelectedItem="{Binding SelectedDay}">
                 <ComboBox.RenderTransform>
@@ -56,10 +57,10 @@
                 </ComboBox.RenderTransform>
             </ComboBox>
         </StackPanel>
-        
-        
+
+
         <DockPanel Grid.Row="1" Grid.Column="0" >
-            
+
             <TextBlock FontSize="15" Text="Поиск" Width="200"
                        HorizontalAlignment="Left" DockPanel.Dock="Top"  />
             <TextBox  DockPanel.Dock="Top" Width="200" HorizontalAlignment="Left" Text="{Binding SearchText,
@@ -115,15 +116,15 @@
                         <TextBlock Text="Добавление" />
                     </Label>
                     <TextBlock Text="Группа"/>
-                <TextBox x:Name="group"  Text="{Binding Group}"/>
-                <TextBlock Text="Пара"/>
-                <TextBox x:Name="Pair" Text="{Binding Pair}"/>
-                <TextBlock Text="Предмет"/>
-                <TextBox x:Name="Predmet"  Text="{Binding Predmet}"/>
-                <TextBlock Text="Аудитория"/>
-                <TextBox x:Name="Cabinet"  Text="{Binding Cabinet}"/>
-                <TextBlock Text="Препод"/>
-                <TextBox x:Name="Name"  Text="{Binding Name}"/>
+                    <TextBox x:Name="group"  Text="{Binding Group}"/>
+                    <TextBlock Text="Пара"/>
+                    <TextBox x:Name="Pair" Text="{Binding Pair}"/>
+                    <TextBlock Text="Предмет"/>
+                    <TextBox x:Name="Predmet"  Text="{Binding Predmet}"/>
+                    <TextBlock Text="Аудитория"/>
+                    <TextBox x:Name="Cabinet"  Text="{Binding Cabinet}"/>
+                    <TextBlock Text="Препод"/>
+                    <TextBox x:Name="Name"  Text="{Binding Name}"/>
 
                     <Button   Background="#fccf03"
                               HorizontalAlignment="Center" Content="Добавить"  Width="130" Height="25"
