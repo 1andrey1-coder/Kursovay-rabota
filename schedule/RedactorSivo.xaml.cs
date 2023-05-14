@@ -148,7 +148,7 @@ namespace schedule
 
         private void saved(object sender, RoutedEventArgs e)
         {
-
+            DB.GetInstance().SaveChanges();
         }
     }
 }
