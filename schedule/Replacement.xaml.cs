@@ -142,6 +142,7 @@ namespace schedule
         private TblWeekday SelectedDay1;
         public List<TblReplacement> TblReplacement { get => TblReplacement1; set { TblReplacement1 = value; Fill(); } }
         private List<TblReplacement> TblReplacement1;
+
         public Replacement()
         {
             InitializeComponent();
