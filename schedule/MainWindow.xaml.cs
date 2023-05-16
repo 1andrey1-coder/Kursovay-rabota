@@ -158,17 +158,14 @@ namespace schedule
 
         private void Obn(object sender, RoutedEventArgs e)
         {
-            var res = MessageBox.Show("Обновить таблицу?", "Потверждение", MessageBoxButton.YesNo,
-                    MessageBoxImage.Question);
-            if (res == MessageBoxResult.Yes)
+            
+            using (var db = new ScheduleDbContext())
             {
-                using (var db = new ScheduleDbContext())
-                {
-                    //TblScheduleDb = DB.GetInstance().TblScheduleDbs.ToList();
-                    TblScheduleDb = db.TblScheduleDbs.Where(s => s.Groupid == SelectedGroup2.GroupId).ToList();
-                    db.SaveChanges();
-                }
+                //TblScheduleDb = DB.GetInstance().TblScheduleDbs.ToList();
+                TblScheduleDb = db.TblScheduleDbs.Where(s => s.Groupid == SelectedGroup2.GroupId).ToList();
+                db.SaveChanges();
             }
+            
 
 
         }
