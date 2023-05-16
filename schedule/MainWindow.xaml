@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:schedule"
         mc:Ignorable="d"
-        Title="Расписание Колледжа" Height="600" Width="920" Background="LightSkyBlue"
+        Title="Расписание Колледжа" Height="600" Width="1020" Background="LightSkyBlue"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
@@ -116,7 +116,7 @@
                         <GridViewColumn  Header="Группа" Width="150" DisplayMemberBinding="{Binding Group}"/>
                         <GridViewColumn Header="Пара" Width="70" DisplayMemberBinding="{Binding Pair}"/>
                         <GridViewColumn Header="Аудитория" Width="100" DisplayMemberBinding="{Binding Cabinet}" />
-                        <GridViewColumn Header="Препод" Width="170" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Преподователь" Width="170" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Предмет" Width="150" DisplayMemberBinding="{Binding Predmet}"/>
                     </GridView>
                 </ListView.View>
@@ -124,8 +124,8 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left"
-                    Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="1"
-                    Width="652" Margin="0,38,0,47" Grid.RowSpan="2" >
+                    Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1"
+                    Width="652" Margin="0,0,0,1" >
             <ListView  x:Name="groupi" ItemsSource="{Binding TblScheduleDb}" Background="LightBlue"
                        MaxWidth="900" Width="652"  Height="200">
                 <ListView.View>
@@ -133,7 +133,7 @@
                         <GridViewColumn Header="День" Width="100" DisplayMemberBinding="{Binding Day}"/>
                         <GridViewColumn Header="Пара" Width="70" DisplayMemberBinding="{Binding Pair}"/>
                         <GridViewColumn Header="Аудитория" Width="100" DisplayMemberBinding="{Binding Cabinet}" />
-                        <GridViewColumn Header="Препод" Width="170" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Преподователь" Width="170" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Предмет" Width="150" DisplayMemberBinding="{Binding Predmet}"/>
                     </GridView>
                 </ListView.View>

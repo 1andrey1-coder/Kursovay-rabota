@@ -150,7 +150,7 @@
 
                     <TextBlock Text="День"/>
                     <TextBox x:Name="Day"  Text="{Binding Day}"  HorizontalAlignment="Left"  Width="100" />
-                    <TextBlock Text="Препод"/>
+                    <TextBlock Text="Преподователь"/>
                     <TextBox x:Name="Name"  Text="{Binding Name}" HorizontalAlignment="Left" Width="100"/>
                     <TextBlock Text="Пара"/>
                     <TextBox x:Name="Pair" Text="{Binding Pair}"  HorizontalAlignment="Left" Width="100"/>
@@ -187,7 +187,7 @@
             <ListView.View>
                 <GridView >
                     <GridViewColumn Header="День" Width="100" DisplayMemberBinding="{Binding Day}"/>
-                    <GridViewColumn Header="Препод" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Преподователь" Width="100" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Пара" Width="50" DisplayMemberBinding="{Binding Pair}"/>
                     <GridViewColumn Header="Предмет" Width="100" DisplayMemberBinding="{Binding Predmet}"/>
                     <GridViewColumn Header="Аудитория" Width="75" DisplayMemberBinding="{Binding Cabinet}"/>
@@ -210,7 +210,7 @@
                     </Label>
                     <TextBlock Text="День"/>
                     <TextBox  Text="{Binding Path=Day}"/>
-                    <TextBlock Text="Препод"/>
+                    <TextBlock Text="Преподователь"/>
                     <TextBox  Text="{Binding Path=Name}"/>
                     <TextBlock Text="Пара"/>
                     <TextBox  Text="{Binding Path=Pair}"/>

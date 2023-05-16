@@ -72,7 +72,7 @@
                         <GridViewColumn  Header="Группа" Width="150" DisplayMemberBinding="{Binding Group}"/>
                         <GridViewColumn Header="Пара" Width="70" DisplayMemberBinding="{Binding Pair}"/>
                         <GridViewColumn  Header="Аудитория" Width="100" DisplayMemberBinding="{Binding Cabinet}" />
-                        <GridViewColumn  Header="Препод" Width="170" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn  Header="Преподователь" Width="170" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn  Header="Предмет" Width="150" DisplayMemberBinding="{Binding Predmet}"/>
                     </GridView>
                 </ListView.View>
@@ -102,7 +102,7 @@
                 <TextBox  Text="{Binding Path=Predmet}"/>
                 <TextBlock Text="Аудитория"/>
                 <TextBox  Text="{Binding Path=Cabinet}"/>
-                <TextBlock Text="Препод"/>
+                <TextBlock Text="Преподователь"/>
                 <TextBox  Text="{Binding Path=Name}"/>
                 <Button  Background="#fccf03"  x:Name="Repair"
                          HorizontalAlignment="Center" Content="Редактировать"  Width="130" Height="25"
@@ -123,7 +123,7 @@
                     <TextBox x:Name="Predmet"  Text="{Binding Predmet}"/>
                     <TextBlock Text="Аудитория"/>
                     <TextBox x:Name="Cabinet"  Text="{Binding Cabinet}"/>
-                    <TextBlock Text="Препод"/>
+                    <TextBlock Text="Преподователь"/>
                     <TextBox x:Name="Name"  Text="{Binding Name}"/>
 
                     <Button   Background="#fccf03"

@@ -202,7 +202,7 @@ namespace schedule
                     db.TblReplacements.Add(replacement);
                     db.SaveChanges();
                     tbl_replacement = DB.GetInstance().TblReplacements.ToList();
-                    tbl_replacement = db.TblReplacements.Where(s => s.Id == SelectedDay.Id).ToList();
+                    tbl_replacement = db.TblReplacements.Where(s => s.WeekdaysId == SelectedDay.Id).ToList();
                     replacement = new TblReplacement();
 
                 }
@@ -226,9 +226,13 @@ namespace schedule
                     MessageBoxImage.Asterisk);
                 using (var db = new ScheduleDbContext())
                 {
-                    DB.GetInstance().TblReplacements.Remove(Selected);
+                    
+                    var remove = DB.GetInstance().TblReplacements.Find(Selected.Id);
+                    DB.GetInstance().TblReplacements.Remove(remove);
                     DB.GetInstance().SaveChanges();
                     tbl_replacement = DB.GetInstance().TblReplacements.ToList();
+                    tbl_replacement = db.TblReplacements.Where(s => s.WeekdaysId == SelectedDay.Id).ToList();
+
                 }
             }
         }

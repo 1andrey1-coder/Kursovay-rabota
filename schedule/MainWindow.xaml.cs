@@ -156,7 +156,22 @@ namespace schedule
 
         //}
 
+        private void Obn(object sender, RoutedEventArgs e)
+        {
+            var res = MessageBox.Show("Обновить таблицу?", "Потверждение", MessageBoxButton.YesNo,
+                    MessageBoxImage.Question);
+            if (res == MessageBoxResult.Yes)
+            {
+                using (var db = new ScheduleDbContext())
+                {
+                    //TblScheduleDb = DB.GetInstance().TblScheduleDbs.ToList();
+                    TblScheduleDb = db.TblScheduleDbs.Where(s => s.Groupid == SelectedGroup2.GroupId).ToList();
+                    db.SaveChanges();
+                }
+            }
 
+
+        }
         private void Obnov(object sender, RoutedEventArgs e)
         {
             var res = MessageBox.Show("Обновить таблицу?", "Потверждение", MessageBoxButton.YesNo,
@@ -184,7 +199,7 @@ namespace schedule
             {
                 RedactorSivo redactorSivos = new RedactorSivo(SelectedGroup);
                 redactorSivos.ShowDialog();
-                
+                Obn(sender, e);
             }
         }
     }
