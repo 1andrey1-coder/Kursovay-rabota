@@ -158,13 +158,12 @@ namespace schedule
 
         private void Obn(object sender, RoutedEventArgs e)
         {
+
+
+            TblScheduleDb = DB.GetInstance().TblScheduleDbs.Where(s => s.Groupid == SelectedGroup2.GroupId).ToList();
+            //TblScheduleDb = DB.GetInstance().TblScheduleDbs.ToList();
+            DB.GetInstance().SaveChanges();
             
-            using (var db = new ScheduleDbContext())
-            {
-                //TblScheduleDb = DB.GetInstance().TblScheduleDbs.ToList();
-                TblScheduleDb = db.TblScheduleDbs.Where(s => s.Groupid == SelectedGroup2.GroupId).ToList();
-                db.SaveChanges();
-            }
             
 
 
